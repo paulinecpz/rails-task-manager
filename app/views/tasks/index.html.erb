@@ -11,7 +11,7 @@
     <% @tasks.each do |task| %>
     <tr>
       <td><%= task.completed? ? "✅" : "❌" %></td>
-      <td><%= link_to "#{task.title}", task_path(task) %></td>
+      <td><%= link_to "#{task.title}", tasks_path(task) %></td>
       <td><%= link_to "🗑", destroy_path(task),
             method: :delete,
             data: { confirm: "Are you sure?" } %></td>
@@ -19,5 +19,5 @@
     </tr>
   </table>
 
-<%= link_to "Add new Task", tasks_new_path, class: 'btn btn-primary' %>
+<%= link_to "Add new Task", new_task_path, class: 'btn btn-primary' %>
 </div>
