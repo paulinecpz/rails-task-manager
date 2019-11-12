@@ -1,0 +1,23 @@
+<div class="container mt-5">
+  <h1>List of all Tasks</h1>
+
+  <table class="table">
+    <tr>
+      <th>Done ?</th>
+      <th>Tasks</th>
+      <th>Delete ?</th>
+    </tr>
+
+    <% @tasks.each do |task| %>
+    <tr>
+      <td><%= task.completed? ? "✅" : "❌" %></td>
+      <td><%= link_to "#{task.title}", task_path(task) %></td>
+      <td><%= link_to "🗑", destroy_path(task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %></td>
+      <% end %>
+    </tr>
+  </table>
+
+<%= link_to "Add new Task", tasks_new_path, class: 'btn btn-primary' %>
+</div>

@@ -1,0 +1,16 @@
+<div class="container mt-5">
+  <h1>Create a new task</h1>
+  <form action="/tasks" method="post">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <div>
+    <label for="title">Title: </label>
+    <input type="text" name="task[title]" id="title">
+    </div>
+    <div>
+    <label for="details">details: </label>
+    <input type="text" name="task[details]" id="details">
+    </div>
+    <input type="submit" class="btn btn-primary">
+  </form>
+
+</div>
